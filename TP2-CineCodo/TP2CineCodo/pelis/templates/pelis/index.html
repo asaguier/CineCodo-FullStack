@@ -1,0 +1,82 @@
+
+{% extends 'core/base.html' %}
+
+
+{% block title %}Cine Codo - Index{% endblock %}
+
+{% block content %}
+
+<main>
+    {% load static %}   
+
+    <section class="container">
+        <h2>LINK VENTANA PELI</h2>
+
+            <article class="estrenos">
+
+                <div class="caja-peliculas">
+                    <a href="{% url 'pelicula' %}">
+                    <div class="caja-img" >                        
+                        <img src="{% static 'core/Imagenes/estreno.jpg' %}" alt="Extraña forma de vida" width="160" height="240">                        
+                        <div class="titulo">
+                            <span>EXTRAÑA FORMA DE VIDA</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+            </article>
+
+            <h2>ESTRENOS</h2>
+            <article class="prox">
+            {% for peli in pelis %}
+                {% if peli.tipo == "ESTRENOS" %}                
+                    <div class="caja-peliculas">
+                        <div class="caja-img">
+                            <img src="{{peli.imagen.url}}" alt="{{peli.nombre}}" width="160" height="240">                        
+                            <div class="titulo">
+                                <span>{{peli.nombre}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %} 
+            {% endfor %}                           
+            </article>
+            
+            <h2>PELICULAS</h2>
+            <article class="prox">
+            {% for peli in pelis %}
+                {% if peli.tipo == "PELICULAS" %}                
+                    <div class="caja-peliculas">
+                        <div class="caja-img">
+                            <img src="{{peli.imagen.url}}" alt="{{peli.nombre}}" width="160" height="240">                        
+                            <div class="titulo">
+                                <span>{{peli.nombre}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %} 
+            {% endfor %}                           
+            </article>
+    
+            <h2>PROXIMAMENTE</h2>
+            <article class="prox">
+            {% for peli in pelis %}
+                {% if peli.tipo == "PROXIMAMENTE" %}                
+                    <div class="caja-peliculas">
+                        <div class="caja-img">
+                            <img src="{{peli.imagen.url}}" alt="{{peli.nombre}}" width="160" height="240">                        
+                            <div class="titulo">
+                                <span>{{peli.nombre}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %} 
+            {% endfor %}                           
+            </article>
+
+    </section>  
+    
+</main>
+
+{% endblock %}

@@ -1,0 +1,302 @@
+*{  
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif, Arial;
+    z-index: 1;
+}
+
+:root{   /*afecta TODO el body, inlcuyendo las etiquetas semánticas*/
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 1;
+}
+
+.redes{   
+    height: 90px;
+    padding-top: 30px;
+    display: flex;    
+    justify-content: space-between;
+    width: 200px;
+}
+
+.menu{
+    background-color: rgb(250, 200 , 5);
+    height: 50px;
+    width: 100%;
+    border: 1mp 1mp white solid;      
+}
+
+.menu ul{
+    padding: 15px;
+    list-style: none; /*lista sin estilo*/
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    justify-content: space-evenly;/*centrar*/
+}
+
+.menu li{
+    float: left;/*los items no se pongan en bloque*/
+    font-weight: 700;/*resaltado*/
+    text-align: center;/*alinieado*/    
+}
+
+.menu a{
+    text-decoration: none;/*sacar el subrayado*/
+    color: white;
+    padding: 0.6em 2em;/*sombredo para*/
+}
+
+.menu ul li a:hover{
+    background-color: rgb(250, 200 , 5);
+}
+
+body{
+    background-color: black;
+}
+
+h3, p, div > div, table {
+    font-size: 1em;
+    color: white;
+}
+
+.container{    
+    width: 100%;
+    height: 100%;   
+}
+
+h2{
+    color:rgb(250, 200 , 5);
+}
+
+.caja-peliculas{
+    width: 200px;
+    height: 320px;    
+}
+
+.caja-img{
+    width: 160px;
+    height: 260px;
+}
+
+.caja-img:hover{
+    border-bottom: 20px rgb(250, 200 , 5) outset;
+    transition: all 0.2s ;
+    border-radius: 10px;
+}
+
+.titulo{
+    margin-top: 20px;
+    text-align: center;    
+}
+
+span{
+    color: aqua;  
+}
+
+span:hover{
+    color: white;
+}
+
+.estrenos{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;/*flex direction es para ordenar. row las ordena en filas*/
+    flex-wrap: wrap;/*wrap es evita desvordamientos*/
+    justify-content: flex-start;    
+}
+
+.peliculas{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;    
+}
+
+.prox{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-flow: row wrap;/*flex-flow es para resumir el direction y wrap*/
+    justify-content: flex-start;
+}
+
+i{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 25px;
+}
+
+i:hover{    
+    color:rgb(250, 200 , 5);
+}
+
+.formLabel{
+    color: white;
+}
+
+.formBoton{
+    width: 80px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.formBoton:hover{
+    background-color:rgb(250, 200 , 5);
+}
+
+.trailer{
+    position: static;
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.fotoactores{
+    border: 5px solid white;
+    transform: scale(90%,90%);
+}
+
+.textor {    /*texto del reparto*/
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+}   
+
+.encabezado{
+    background-color: black;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.complejos p{
+    color: white;
+    text-align: center;
+}
+
+.complejos>li{
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+@media (max-width: 400px) {
+    .complejos p{
+        font-size: 4vw;
+    }
+    .complejos iframe{
+        width:80vw;
+    }
+    .complejos>li{
+        margin: 0.2vw;
+        padding: 0.2vw;
+    }
+
+    .Poster{                  
+        border: 10px solid green;
+        width: 80%;
+        position: top;
+    }
+}
+  
+@media (min-width: 400px) and (max-width: 600px) {
+    .complejos p{
+        font-size: 3vw;
+    }
+    .complejos iframe{
+        width:82vw;
+    }
+    .complejos>li{
+        margin: 0.4vw;
+        padding: 0.4vw;
+    }    
+
+    .Poster{                  
+        border: 10px solid black;
+        width: 80%;
+        position: top;
+    }
+}
+  
+@media (min-width: 600px) and (max-width: 800px) {
+    .complejos p{
+        font-size: 2vw;
+    }
+    .complejos iframe{
+        width:84vw;
+    }
+    .complejos>li{
+        margin: 0.6vw;
+        padding: 0.6vw;
+    }
+   
+    .Poster{                  
+        border: 10px solid blue;
+        width: 60%;
+        position: top;
+    }
+}
+  
+@media (min-width: 800px) {
+    .complejos p{
+        font-size: 1.5vw;
+    }
+    .complejos iframe{
+        width:84vw;
+    }
+    .complejos>li{
+        margin: 0.8vw;
+        padding: 0.8vw;
+    }
+
+    .actores {
+        float:left;
+        width:60%;    
+    }
+    
+    aside{
+        float:right;
+        width:40%;
+    }
+    
+    .Poster{                  
+        border: 10px solid white;
+        width: 100%;
+        position: top;
+    }
+    
+}
+
+.navbar{
+    font-weight: bold;    
+    font-size: large;
+    background-color:rgb(250, 200 , 5);    
+}
+
+a:link {
+    color: white;
+}
+
+small{
+    color: white;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+main{
+    margin-top: 150px;
+}

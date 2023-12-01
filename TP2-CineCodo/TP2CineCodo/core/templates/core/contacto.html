@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Cine Codo - Contacto{% endblock %}
+
+{% block content %}
+
+<main>
+    {% load static %}   
+    <section >
+        
+        <h2>Por favor completá el formulario con tu consulta o comentarios:</h2>
+        
+        <form id="form" action="https://formspree.io/f/xoqoyazy" method="POST" >
+
+            <label for="nombre" class="formLabel" >Nombre (requerido)</label><br/>
+            <input type="text" name="nombre" id="nombre" class="formInput" placeholder="Nombre y apellido"  /><br/>
+            <br/>
+            <label for="mail" class="formLabel">Correo Electrónico (requerido)</label><br/>
+            <input  type="email" name="mail" id="mail" class="formInput" placeholder="Mail"  /><br/>
+            <br/>
+            <label for="cel" class="formLabel">Celular (requerido)</label><br/>
+            <input type="tel" name="cel" id="cel" class="formInput" pattern="[0-9]{10}" placeholder="Celular"  /> <small>Completar con Código de Area + Número Local (largo total = 10). Ejemplo: 1144445555</small><br/>
+            <br/>
+            <label for="mensaje" class="formLabel">Mensaje (requerido)</label><br/>
+            <textarea name="mensaje" id="mensaje" class="formInput" style="height:150px;width:300px" placeholder="Mensaje" ></textarea><br/>
+            <br/>
+            <input type="submit" class="formBoton" name="botonEnviar" value="Enviar">
+            <input type="reset" class="formBoton" name="botonReset" value="Borrar">
+        </form>
+
+    </section>
+
+    <script src="{% static 'core/app.js' %}"></script>
+</main>
+
+{% endblock %}
